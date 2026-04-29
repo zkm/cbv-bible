@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node / Vue app
+study-guide/node_modules/
+study-guide/dist/
+
+# Generated build artifacts
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

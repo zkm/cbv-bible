@@ -1,0 +1,1131 @@
+{
+  "abbreviation": "CPDV",
+  "translation": "Catholic Public Domain Version",
+  "book": "Ephesians",
+  "slug": "ephesians",
+  "chapter_count": 6,
+  "verse_count": 155,
+  "chapters": [
+    {
+      "chapter": 1,
+      "verse_count": 23,
+      "verses": [
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 1,
+          "reference": "Ephesians 1:1",
+          "text": "Paul, an Apostle of Jesus Christ through the will of God, to all the saints who are at Ephesus and to the faithful in Christ Jesus."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 2,
+          "reference": "Ephesians 1:2",
+          "text": "Grace and peace to you from God the Father, and from the Lord Jesus Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 3,
+          "reference": "Ephesians 1:3",
+          "text": "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us with every spiritual blessing in the heavens, in Christ,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 4,
+          "reference": "Ephesians 1:4",
+          "text": "just as he chose us in him before the foundation of the world, so that we would be holy and immaculate in his sight, in charity."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 5,
+          "reference": "Ephesians 1:5",
+          "text": "He has predestined us to adoption as sons, through Jesus Christ, in himself, according to the purpose of his will,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 6,
+          "reference": "Ephesians 1:6",
+          "text": "for the praise of the glory of his grace, with which he has gifted us in his beloved Son."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 7,
+          "reference": "Ephesians 1:7",
+          "text": "In him, we have redemption through his blood: the remission of sins in accord with the riches of his grace,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 8,
+          "reference": "Ephesians 1:8",
+          "text": "which is superabundant in us, with all wisdom and prudence."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 9,
+          "reference": "Ephesians 1:9",
+          "text": "So does he make known to us the mystery of his will, which he has set forth in Christ, in a manner well-pleasing to him,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 10,
+          "reference": "Ephesians 1:10",
+          "text": "in the dispensation of the fullness of time, so as to renew in Christ everything that exists through him in heaven and on earth."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 11,
+          "reference": "Ephesians 1:11",
+          "text": "In him, we too are called to our portion, having been predestined in accord with the plan of the One who accomplishes all things by the counsel of his will."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 12,
+          "reference": "Ephesians 1:12",
+          "text": "So may we be, to the praise of his glory, we who have hoped beforehand in Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 13,
+          "reference": "Ephesians 1:13",
+          "text": "In him, you also, after you heard and believed the Word of truth, which is the Gospel of your salvation, were sealed with the Holy Spirit of the Promise."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 14,
+          "reference": "Ephesians 1:14",
+          "text": "He is the pledge of our inheritance, unto the acquisition of redemption, to the praise of his glory."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 15,
+          "reference": "Ephesians 1:15",
+          "text": "Because of this, and hearing of your faith that is in the Lord Jesus, and of your love toward all the saints,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 16,
+          "reference": "Ephesians 1:16",
+          "text": "I have not ceased giving thanks for you, calling you to mind in my prayers,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 17,
+          "reference": "Ephesians 1:17",
+          "text": "so that the God of our Lord Jesus Christ, the Father of glory, may give a spirit of wisdom and of revelation to you, in knowledge of him."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 18,
+          "reference": "Ephesians 1:18",
+          "text": "May the eyes of your heart be illuminated, so that you may know what is the hope of his calling, and the wealth of the glory of his inheritance with the saints,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 19,
+          "reference": "Ephesians 1:19",
+          "text": "and the preeminent magnitude of his virtue toward us, toward we who believe in accord with the work of his powerful virtue,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 20,
+          "reference": "Ephesians 1:20",
+          "text": "which he wrought in Christ, raising him from the dead and establishing him at his right hand in the heavens,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 21,
+          "reference": "Ephesians 1:21",
+          "text": "above every principality and power and virtue and dominion, and above every name that is given, not only in this age, but even in the future age."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 22,
+          "reference": "Ephesians 1:22",
+          "text": "And he has subjected all things under his feet, and he has made him the head over the entire Church,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 1,
+          "verse": 23,
+          "reference": "Ephesians 1:23",
+          "text": "which is his body and which is the fullness of him who accomplishes everything in everyone."
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "verse_count": 22,
+      "verses": [
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 1,
+          "reference": "Ephesians 2:1",
+          "text": "And you were once dead in your sins and offenses,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 2,
+          "reference": "Ephesians 2:2",
+          "text": "in which you walked in times past, according to the age of this world, according to the prince of the power of this sky, the spirit who now works in the sons of distrust."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 3,
+          "reference": "Ephesians 2:3",
+          "text": "And we too were all conversant in these things, in times past, by the desires of our flesh, acting according to the will of the flesh and according to our own thoughts. And so we were, by nature, sons of wrath, even like the others."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 4,
+          "reference": "Ephesians 2:4",
+          "text": "Yet still, God, who is rich in mercy, for the sake of his exceedingly great charity with which he loved us,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 5,
+          "reference": "Ephesians 2:5",
+          "text": "even when we were dead in our sins, has enlivened us together in Christ, by whose grace you have been saved."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 6,
+          "reference": "Ephesians 2:6",
+          "text": "And he has raised us up together, and he has caused us to sit down together in the heavens, in Christ Jesus,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 7,
+          "reference": "Ephesians 2:7",
+          "text": "so that he may display, in the ages soon to arrive, the abundant wealth of his grace, by his goodness toward us in Christ Jesus."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 8,
+          "reference": "Ephesians 2:8",
+          "text": "For by grace, you have been saved through faith. And this is not of yourselves, for it is a gift of God."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 9,
+          "reference": "Ephesians 2:9",
+          "text": "And this is not of works, so that no one may glory."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 10,
+          "reference": "Ephesians 2:10",
+          "text": "For we are his handiwork, created in Christ Jesus for the good works which God has prepared and in which we should walk."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 11,
+          "reference": "Ephesians 2:11",
+          "text": "Because of this, be mindful that, in times past, you were Gentiles in the flesh, and that you were called uncircumcised by those who are called circumcised in the flesh, something done by man,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 12,
+          "reference": "Ephesians 2:12",
+          "text": "and that you were, in that time, without Christ, being foreign to the way of life of Israel, being visitors to the testament, having no hope of the promise, and being without God in this world."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 13,
+          "reference": "Ephesians 2:13",
+          "text": "But now, in Christ Jesus, you, who were in times past far away, have been brought near by the blood of Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 14,
+          "reference": "Ephesians 2:14",
+          "text": "For he is our peace. He made the two into one, by dissolving the intermediate wall of separation, of opposition, by his flesh,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 15,
+          "reference": "Ephesians 2:15",
+          "text": "emptying the law of commandments by decree, so that he might join these two, in himself, into one new man, making peace"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 16,
+          "reference": "Ephesians 2:16",
+          "text": "and reconciling both to God, in one body, through the cross, destroying this opposition in himself."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 17,
+          "reference": "Ephesians 2:17",
+          "text": "And upon arriving, he evangelized peace to you who were far away, and peace to those who were near."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 18,
+          "reference": "Ephesians 2:18",
+          "text": "For by him, we both have access, in the one Spirit, to the Father."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 19,
+          "reference": "Ephesians 2:19",
+          "text": "Now, therefore, you are no longer visitors and new arrivals. Instead, you are citizens among the saints in the household of God,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 20,
+          "reference": "Ephesians 2:20",
+          "text": "having been built upon the foundation of the Apostles and of the Prophets, with Jesus Christ himself as the preeminent cornerstone."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 21,
+          "reference": "Ephesians 2:21",
+          "text": "In him, all that has been built is framed together, rising up into a holy temple in the Lord."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 22,
+          "reference": "Ephesians 2:22",
+          "text": "In him, you also have been built together into a habitation of God in the Spirit."
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "verse_count": 21,
+      "verses": [
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 1,
+          "reference": "Ephesians 3:1",
+          "text": "By reason of this grace, I, Paul, am a prisoner of Jesus Christ, for the sake of you Gentiles."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 2,
+          "reference": "Ephesians 3:2",
+          "text": "Now certainly, you have heard of the dispensation of the grace of God, which has been given to me among you:"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 3,
+          "reference": "Ephesians 3:3",
+          "text": "that, by means of revelation, the mystery was made known to me, just as I have written above in a few words."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 4,
+          "reference": "Ephesians 3:4",
+          "text": "Yet, by reading this closely, you might be able to understand my prudence in the mystery of Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 5,
+          "reference": "Ephesians 3:5",
+          "text": "In other generations, this was unknown to the sons of men, even as it has now been revealed to his holy Apostles and Prophets in the Spirit,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 6,
+          "reference": "Ephesians 3:6",
+          "text": "so that the Gentiles would be co-heirs, and of the same body, and partners together, by his promise in Christ Jesus, through the Gospel."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 7,
+          "reference": "Ephesians 3:7",
+          "text": "Of this Gospel, I have been made a minister, according to the gift of the grace of God, which has been given to me by means of the operation of his virtue."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 8,
+          "reference": "Ephesians 3:8",
+          "text": "Although I am the least of all the saints, I have been given this grace: to evangelize among the Gentiles the unsearchable riches of Christ,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 9,
+          "reference": "Ephesians 3:9",
+          "text": "and to enlighten everyone concerning the dispensation of the mystery, hidden before the ages in God who created all things,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 10,
+          "reference": "Ephesians 3:10",
+          "text": "so that the manifold wisdom of God may become well-known to the principalities and powers in the heavens, through the Church,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 11,
+          "reference": "Ephesians 3:11",
+          "text": "according to that timeless purpose, which he has formed in Christ Jesus our Lord."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 12,
+          "reference": "Ephesians 3:12",
+          "text": "In him we trust, and so we approach with confidence, through his faith."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 13,
+          "reference": "Ephesians 3:13",
+          "text": "Because of this, I ask you not to be weakened by my tribulations on your behalf; for this is your glory."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 14,
+          "reference": "Ephesians 3:14",
+          "text": "By reason of this grace, I bend my knees to the Father of our Lord Jesus Christ,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 15,
+          "reference": "Ephesians 3:15",
+          "text": "from whom all paternity in heaven and on earth takes its name."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 16,
+          "reference": "Ephesians 3:16",
+          "text": "And I ask him to grant to you to be strengthened in virtue by his Spirit, in accord with the wealth of his glory, in the inner man,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 17,
+          "reference": "Ephesians 3:17",
+          "text": "so that Christ may live in your hearts through a faith rooted in, and founded on, charity."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 18,
+          "reference": "Ephesians 3:18",
+          "text": "So may you be able to embrace, with all the saints, what is the width and length and height and depth"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 19,
+          "reference": "Ephesians 3:19",
+          "text": "of the charity of Christ, and even be able to know that which surpasses all knowledge, so that you may be filled with all the fullness of God."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 20,
+          "reference": "Ephesians 3:20",
+          "text": "Now to him who is able to do all things, more abundantly than we could ever ask or understand, by means of the virtue which is at work in us:"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 3,
+          "verse": 21,
+          "reference": "Ephesians 3:21",
+          "text": "to him be glory, in the Church and in Christ Jesus, throughout every generation, forever and ever. Amen."
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "verse_count": 32,
+      "verses": [
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 1,
+          "reference": "Ephesians 4:1",
+          "text": "And so, as a prisoner in the Lord, I beg you to walk in a manner worthy of the vocation to which you have been called:"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 2,
+          "reference": "Ephesians 4:2",
+          "text": "with all humility and meekness, with patience, supporting one another in charity."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 3,
+          "reference": "Ephesians 4:3",
+          "text": "Be anxious to preserve the unity of the Spirit within the bonds of peace."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 4,
+          "reference": "Ephesians 4:4",
+          "text": "One body and one Spirit: to this you have been called by the one hope of your calling:"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 5,
+          "reference": "Ephesians 4:5",
+          "text": "one Lord, one faith, one baptism,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 6,
+          "reference": "Ephesians 4:6",
+          "text": "one God and Father of all, who is over all, and through all, and in us all."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 7,
+          "reference": "Ephesians 4:7",
+          "text": "Yet to each one of us there has been given grace according to the measure allotted by Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 8,
+          "reference": "Ephesians 4:8",
+          "text": "Because of this, he says: “Ascending on high, he took captivity itself captive; he gave gifts to men.”"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 9,
+          "reference": "Ephesians 4:9",
+          "text": "Now that he has ascended, what is left except for him also to descended, first to the lower parts of the earth?"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 10,
+          "reference": "Ephesians 4:10",
+          "text": "He who descended is the same one who also ascended above all the heavens, so that he might fulfill everything."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 11,
+          "reference": "Ephesians 4:11",
+          "text": "And the same one granted that some would be Apostles, and some Prophets, yet truly others evangelists, and others pastors and teachers,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 12,
+          "reference": "Ephesians 4:12",
+          "text": "for the sake of the perfection of the saints, by the work of the ministry, in the edification of the body of Christ,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 13,
+          "reference": "Ephesians 4:13",
+          "text": "until we all meet in the unity of faith and in the knowledge of the Son of God, as a perfect man, in the measure of the age of the fullness of Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 14,
+          "reference": "Ephesians 4:14",
+          "text": "So may we then no longer be little children, disturbed and carried about by every wind of doctrine, by the wickedness of men, and by the craftiness which deceives unto error."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 15,
+          "reference": "Ephesians 4:15",
+          "text": "Instead, acting according to truth in charity, we should increase in everything, in him who is the head, Christ himself."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 16,
+          "reference": "Ephesians 4:16",
+          "text": "For in him, the whole body is joined closely together, by every underlying joint, through the function allotted to each part, bringing improvement to the body, toward its edification in charity."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 17,
+          "reference": "Ephesians 4:17",
+          "text": "And so, I say this, and I testify in the Lord: that from now on you should walk, not as the Gentiles also walk, in the vanity of their mind,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 18,
+          "reference": "Ephesians 4:18",
+          "text": "having their intellect obscured, being alienated from the life of God, through the ignorance that is within them, because of the blindness of their hearts."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 19,
+          "reference": "Ephesians 4:19",
+          "text": "Such as these, despairing, have given themselves over to sexual immorality, carrying out every impurity with rapacity."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 20,
+          "reference": "Ephesians 4:20",
+          "text": "But this is not what you have learned in Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 21,
+          "reference": "Ephesians 4:21",
+          "text": "For certainly, you have listened to him, and you have been instructed in him, according to the truth that is in Jesus:"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 22,
+          "reference": "Ephesians 4:22",
+          "text": "to set aside your earlier behavior, the former man, who was corrupted, by means of desire, unto error,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 23,
+          "reference": "Ephesians 4:23",
+          "text": "and so be renewed in the spirit of your mind,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 24,
+          "reference": "Ephesians 4:24",
+          "text": "and so put on the new man, who, in accord with God, is created in justice and in the holiness of truth."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 25,
+          "reference": "Ephesians 4:25",
+          "text": "Because of this, setting aside lying, speak the truth, each one with his neighbor. For we are all part of one another."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 26,
+          "reference": "Ephesians 4:26",
+          "text": "“Be angry, but do not be willing to sin.” Do not let the sun set over your anger."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 27,
+          "reference": "Ephesians 4:27",
+          "text": "Provide no place for the devil."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 28,
+          "reference": "Ephesians 4:28",
+          "text": "Whoever was stealing, let him now not steal, but rather let him labor, working with his hands, doing what is good, so that he may have something to distribute to those who suffer need."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 29,
+          "reference": "Ephesians 4:29",
+          "text": "Let no evil words proceed from your mouth, but only what is good, toward the edification of faith, so as to bestow grace upon those who listen."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 30,
+          "reference": "Ephesians 4:30",
+          "text": "And do not be willing to grieve the Holy Spirit of God, in whom you have been sealed, unto the day of redemption."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 31,
+          "reference": "Ephesians 4:31",
+          "text": "Let all bitterness and anger and indignation and outcry and blasphemy be taken away from you, along with all malice."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 32,
+          "reference": "Ephesians 4:32",
+          "text": "And be kind and merciful to one another, forgiving one another, just as God has forgiven you in Christ."
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "verse_count": 33,
+      "verses": [
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 1,
+          "reference": "Ephesians 5:1",
+          "text": "Therefore, as most beloved sons, be imitators of God."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 2,
+          "reference": "Ephesians 5:2",
+          "text": "And walk in love, just as Christ also loved us and delivered himself for us, as an oblation and a sacrifice to God, with a fragrance of sweetness."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 3,
+          "reference": "Ephesians 5:3",
+          "text": "But let not any kind of fornication, or impurity, or rapacity so much as be named among you, just as is worthy of the saints,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 4,
+          "reference": "Ephesians 5:4",
+          "text": "nor any indecent, or foolish, or abusive talk, for this is without purpose; but instead, give thanks."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 5,
+          "reference": "Ephesians 5:5",
+          "text": "For know and understand this: no one who is a fornicator, or lustful, or rapacious (for these are a kind of service to idols) holds an inheritance in the kingdom of Christ and of God."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 6,
+          "reference": "Ephesians 5:6",
+          "text": "Let no one seduce you with empty words. For because of these things, the wrath of God was sent upon the sons of unbelief."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 7,
+          "reference": "Ephesians 5:7",
+          "text": "Therefore, do not choose to become participants with them."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 8,
+          "reference": "Ephesians 5:8",
+          "text": "For you were darkness, in times past, but now you are light, in the Lord. So then, walk as sons of the light."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 9,
+          "reference": "Ephesians 5:9",
+          "text": "For the fruit of the light is in all goodness and justice and truth,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 10,
+          "reference": "Ephesians 5:10",
+          "text": "affirming what is well-pleasing to God."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 11,
+          "reference": "Ephesians 5:11",
+          "text": "And so, have no fellowship with the unfruitful works of darkness, but instead, refute them."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 12,
+          "reference": "Ephesians 5:12",
+          "text": "For the things that are done by them in secret are shameful, even to mention."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 13,
+          "reference": "Ephesians 5:13",
+          "text": "But all things that are disputed are made manifest by the light. For all that is made manifest is light."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 14,
+          "reference": "Ephesians 5:14",
+          "text": "Because of this, it is said: “You who are sleeping: awaken, and rise up from the dead, and so shall the Christ enlighten you.”"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 15,
+          "reference": "Ephesians 5:15",
+          "text": "And so, brothers, see to it that you walk cautiously, not like the foolish,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 16,
+          "reference": "Ephesians 5:16",
+          "text": "but like the wise: atoning for this age, because this is an evil time."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 17,
+          "reference": "Ephesians 5:17",
+          "text": "For this reason, do not choose to be imprudent. Instead, understand what is the will of God."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 18,
+          "reference": "Ephesians 5:18",
+          "text": "And do not choose to be inebriated by wine, for this is self-indulgence. Instead, be filled with the Holy Spirit,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 19,
+          "reference": "Ephesians 5:19",
+          "text": "speaking among yourselves in psalms and hymns and spiritual canticles, singing and reciting psalms to the Lord in your hearts,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 20,
+          "reference": "Ephesians 5:20",
+          "text": "giving thanks always for everything, in the name of our Lord Jesus Christ, to God the Father."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 21,
+          "reference": "Ephesians 5:21",
+          "text": "Be subject to one another in the fear of Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 22,
+          "reference": "Ephesians 5:22",
+          "text": "Wives should be submissive to their husbands, as to the Lord."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 23,
+          "reference": "Ephesians 5:23",
+          "text": "For the husband is the head of the wife, just as Christ is the head of the Church. He is the Savior of his body."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 24,
+          "reference": "Ephesians 5:24",
+          "text": "Therefore, just as the Church is subject to Christ, so also should wives be subject to their husbands in all things."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 25,
+          "reference": "Ephesians 5:25",
+          "text": "Husbands, love your wives, just as Christ also loved the Church and handed himself over for her,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 26,
+          "reference": "Ephesians 5:26",
+          "text": "so that he might sanctify her, washing her clean by water and the Word of life,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 27,
+          "reference": "Ephesians 5:27",
+          "text": "so that he might offer her to himself as a glorious Church, not having any spot or wrinkle or any such thing, so that she would be holy and immaculate."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 28,
+          "reference": "Ephesians 5:28",
+          "text": "So, too, husbands should love their wives as their own bodies. He who loves his wife loves himself."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 29,
+          "reference": "Ephesians 5:29",
+          "text": "For no man has ever hated his own flesh, but instead he nourishes and cherishes it, as Christ also does to the Church."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 30,
+          "reference": "Ephesians 5:30",
+          "text": "For we are a part of his body, of his flesh and of his bones."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 31,
+          "reference": "Ephesians 5:31",
+          "text": "“For this reason, a man shall leave behind his father and mother, and he shall cling to his wife; and the two shall be as one flesh.”"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 32,
+          "reference": "Ephesians 5:32",
+          "text": "This is a great Sacrament. And I am speaking in Christ and in the Church."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 33,
+          "reference": "Ephesians 5:33",
+          "text": "Yet truly, each and every one of you should love his wife as himself. And a wife should fear her husband."
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "verse_count": 24,
+      "verses": [
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 1,
+          "reference": "Ephesians 6:1",
+          "text": "Children, obey your parents in the Lord, for this is just."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 2,
+          "reference": "Ephesians 6:2",
+          "text": "Honor your father and your mother. This is the first commandment with a promise:"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 3,
+          "reference": "Ephesians 6:3",
+          "text": "so that it may be well with you, and so that you may have a long life upon the earth."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 4,
+          "reference": "Ephesians 6:4",
+          "text": "And you, fathers, do not provoke your children to anger, but educate them with the discipline and correction of the Lord."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 5,
+          "reference": "Ephesians 6:5",
+          "text": "Servants, be obedient to your lords according to the flesh, with fear and trembling, in the simplicity of your heart, as to Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 6,
+          "reference": "Ephesians 6:6",
+          "text": "Do not serve only when seen, as if to please men, but act as servants of Christ, doing the will of God from the heart."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 7,
+          "reference": "Ephesians 6:7",
+          "text": "Serve with good will, as to the Lord, and not to men."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 8,
+          "reference": "Ephesians 6:8",
+          "text": "For you know that whatever good each one will do, the same will he receive from the Lord, whether he is servant or free."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 9,
+          "reference": "Ephesians 6:9",
+          "text": "And you, lords, act similarly toward them, setting aside threats, knowing that the Lord of both you and them is in heaven. For with him there is no favoritism toward anyone."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 10,
+          "reference": "Ephesians 6:10",
+          "text": "Concerning the rest, brothers, be strengthened in the Lord, by the power of his virtue."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 11,
+          "reference": "Ephesians 6:11",
+          "text": "Be clothed in the armor of God, so that you may be able to stand against the treachery of the devil."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 12,
+          "reference": "Ephesians 6:12",
+          "text": "For our struggle is not against flesh and blood, but against principalities and powers, against the directors of this world of darkness, against the spirits of wickedness in high places."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 13,
+          "reference": "Ephesians 6:13",
+          "text": "Because of this, take up the armor of God, so that you may be able to withstand the evil day and remain perfect in all things."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 14,
+          "reference": "Ephesians 6:14",
+          "text": "Therefore, stand firm, having been girded about your waist with truth, and having been clothed with the breastplate of justice,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 15,
+          "reference": "Ephesians 6:15",
+          "text": "and having feet which have been shod by the preparation of the Gospel of peace."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 16,
+          "reference": "Ephesians 6:16",
+          "text": "In all things, take up the shield of faith, with which you may be able to extinguish all the fiery darts of the most wicked one."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 17,
+          "reference": "Ephesians 6:17",
+          "text": "And take up the helmet of salvation and the sword of the Spirit (which is the Word of God)."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 18,
+          "reference": "Ephesians 6:18",
+          "text": "Through every kind of prayer and supplication, pray at all times in spirit, and so be vigilant with every kind of earnest supplication, for all the saints,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 19,
+          "reference": "Ephesians 6:19",
+          "text": "and also for me, so that words may be given to me, as I open my mouth with faith to make known the mystery of the Gospel,"
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 20,
+          "reference": "Ephesians 6:20",
+          "text": "in such a manner that I may dare to speak exactly as I ought to speak. For I act as an ambassador in chains for the Gospel."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 21,
+          "reference": "Ephesians 6:21",
+          "text": "Now, so that you also may know the things that concern me and what I am doing, Tychicus, a most beloved brother and a faithful minister in the Lord, will make known everything to you."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 22,
+          "reference": "Ephesians 6:22",
+          "text": "I have sent him to you for this very reason, so that you may know the things that concern us, and so that he may console your hearts."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 23,
+          "reference": "Ephesians 6:23",
+          "text": "Peace to the brothers, and charity with faith, from God the Father and the Lord Jesus Christ."
+        },
+        {
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 24,
+          "reference": "Ephesians 6:24",
+          "text": "May grace be with all those who love our Lord Jesus Christ, unto incorruption. Amen."
+        }
+      ]
+    }
+  ]
+}

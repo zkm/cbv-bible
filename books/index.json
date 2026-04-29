@@ -1,0 +1,535 @@
+{
+  "abbreviation": "CPDV",
+  "translation": "Catholic Public Domain Version",
+  "book_count": 66,
+  "books": [
+    {
+      "name": "Genesis",
+      "slug": "genesis",
+      "chapter_count": 50,
+      "verse_count": 1533,
+      "json_path": "books/genesis/book.json",
+      "xml_path": "books/genesis/book.xml"
+    },
+    {
+      "name": "Exodus",
+      "slug": "exodus",
+      "chapter_count": 40,
+      "verse_count": 1213,
+      "json_path": "books/exodus/book.json",
+      "xml_path": "books/exodus/book.xml"
+    },
+    {
+      "name": "Leviticus",
+      "slug": "leviticus",
+      "chapter_count": 27,
+      "verse_count": 859,
+      "json_path": "books/leviticus/book.json",
+      "xml_path": "books/leviticus/book.xml"
+    },
+    {
+      "name": "Numbers",
+      "slug": "numbers",
+      "chapter_count": 36,
+      "verse_count": 1288,
+      "json_path": "books/numbers/book.json",
+      "xml_path": "books/numbers/book.xml"
+    },
+    {
+      "name": "Deuteronomy",
+      "slug": "deuteronomy",
+      "chapter_count": 34,
+      "verse_count": 959,
+      "json_path": "books/deuteronomy/book.json",
+      "xml_path": "books/deuteronomy/book.xml"
+    },
+    {
+      "name": "Joshua",
+      "slug": "joshua",
+      "chapter_count": 24,
+      "verse_count": 658,
+      "json_path": "books/joshua/book.json",
+      "xml_path": "books/joshua/book.xml"
+    },
+    {
+      "name": "Judges",
+      "slug": "judges",
+      "chapter_count": 21,
+      "verse_count": 618,
+      "json_path": "books/judges/book.json",
+      "xml_path": "books/judges/book.xml"
+    },
+    {
+      "name": "Ruth",
+      "slug": "ruth",
+      "chapter_count": 4,
+      "verse_count": 85,
+      "json_path": "books/ruth/book.json",
+      "xml_path": "books/ruth/book.xml"
+    },
+    {
+      "name": "1 Samuel",
+      "slug": "1-samuel",
+      "chapter_count": 31,
+      "verse_count": 810,
+      "json_path": "books/1-samuel/book.json",
+      "xml_path": "books/1-samuel/book.xml"
+    },
+    {
+      "name": "2 Samuel",
+      "slug": "2-samuel",
+      "chapter_count": 24,
+      "verse_count": 695,
+      "json_path": "books/2-samuel/book.json",
+      "xml_path": "books/2-samuel/book.xml"
+    },
+    {
+      "name": "1 Kings",
+      "slug": "1-kings",
+      "chapter_count": 22,
+      "verse_count": 816,
+      "json_path": "books/1-kings/book.json",
+      "xml_path": "books/1-kings/book.xml"
+    },
+    {
+      "name": "2 Kings",
+      "slug": "2-kings",
+      "chapter_count": 25,
+      "verse_count": 719,
+      "json_path": "books/2-kings/book.json",
+      "xml_path": "books/2-kings/book.xml"
+    },
+    {
+      "name": "1 Chronicles",
+      "slug": "1-chronicles",
+      "chapter_count": 29,
+      "verse_count": 942,
+      "json_path": "books/1-chronicles/book.json",
+      "xml_path": "books/1-chronicles/book.xml"
+    },
+    {
+      "name": "2 Chronicles",
+      "slug": "2-chronicles",
+      "chapter_count": 36,
+      "verse_count": 822,
+      "json_path": "books/2-chronicles/book.json",
+      "xml_path": "books/2-chronicles/book.xml"
+    },
+    {
+      "name": "Ezra",
+      "slug": "ezra",
+      "chapter_count": 10,
+      "verse_count": 280,
+      "json_path": "books/ezra/book.json",
+      "xml_path": "books/ezra/book.xml"
+    },
+    {
+      "name": "Nehemiah",
+      "slug": "nehemiah",
+      "chapter_count": 13,
+      "verse_count": 406,
+      "json_path": "books/nehemiah/book.json",
+      "xml_path": "books/nehemiah/book.xml"
+    },
+    {
+      "name": "Esther",
+      "slug": "esther",
+      "chapter_count": 10,
+      "verse_count": 167,
+      "json_path": "books/esther/book.json",
+      "xml_path": "books/esther/book.xml"
+    },
+    {
+      "name": "Job",
+      "slug": "job",
+      "chapter_count": 42,
+      "verse_count": 1070,
+      "json_path": "books/job/book.json",
+      "xml_path": "books/job/book.xml"
+    },
+    {
+      "name": "Psalm",
+      "slug": "psalm",
+      "chapter_count": 150,
+      "verse_count": 2461,
+      "json_path": "books/psalm/book.json",
+      "xml_path": "books/psalm/book.xml"
+    },
+    {
+      "name": "Proverbs",
+      "slug": "proverbs",
+      "chapter_count": 31,
+      "verse_count": 915,
+      "json_path": "books/proverbs/book.json",
+      "xml_path": "books/proverbs/book.xml"
+    },
+    {
+      "name": "Ecclesiastes",
+      "slug": "ecclesiastes",
+      "chapter_count": 12,
+      "verse_count": 222,
+      "json_path": "books/ecclesiastes/book.json",
+      "xml_path": "books/ecclesiastes/book.xml"
+    },
+    {
+      "name": "Song of Solomon",
+      "slug": "song-of-solomon",
+      "chapter_count": 8,
+      "verse_count": 117,
+      "json_path": "books/song-of-solomon/book.json",
+      "xml_path": "books/song-of-solomon/book.xml"
+    },
+    {
+      "name": "Isaiah",
+      "slug": "isaiah",
+      "chapter_count": 66,
+      "verse_count": 1292,
+      "json_path": "books/isaiah/book.json",
+      "xml_path": "books/isaiah/book.xml"
+    },
+    {
+      "name": "Jeremiah",
+      "slug": "jeremiah",
+      "chapter_count": 52,
+      "verse_count": 1364,
+      "json_path": "books/jeremiah/book.json",
+      "xml_path": "books/jeremiah/book.xml"
+    },
+    {
+      "name": "Lamentations",
+      "slug": "lamentations",
+      "chapter_count": 5,
+      "verse_count": 154,
+      "json_path": "books/lamentations/book.json",
+      "xml_path": "books/lamentations/book.xml"
+    },
+    {
+      "name": "Ezekiel",
+      "slug": "ezekiel",
+      "chapter_count": 48,
+      "verse_count": 1273,
+      "json_path": "books/ezekiel/book.json",
+      "xml_path": "books/ezekiel/book.xml"
+    },
+    {
+      "name": "Daniel",
+      "slug": "daniel",
+      "chapter_count": 12,
+      "verse_count": 357,
+      "json_path": "books/daniel/book.json",
+      "xml_path": "books/daniel/book.xml"
+    },
+    {
+      "name": "Hosea",
+      "slug": "hosea",
+      "chapter_count": 14,
+      "verse_count": 197,
+      "json_path": "books/hosea/book.json",
+      "xml_path": "books/hosea/book.xml"
+    },
+    {
+      "name": "Joel",
+      "slug": "joel",
+      "chapter_count": 3,
+      "verse_count": 73,
+      "json_path": "books/joel/book.json",
+      "xml_path": "books/joel/book.xml"
+    },
+    {
+      "name": "Amos",
+      "slug": "amos",
+      "chapter_count": 9,
+      "verse_count": 146,
+      "json_path": "books/amos/book.json",
+      "xml_path": "books/amos/book.xml"
+    },
+    {
+      "name": "Obadiah",
+      "slug": "obadiah",
+      "chapter_count": 1,
+      "verse_count": 21,
+      "json_path": "books/obadiah/book.json",
+      "xml_path": "books/obadiah/book.xml"
+    },
+    {
+      "name": "Jonah",
+      "slug": "jonah",
+      "chapter_count": 4,
+      "verse_count": 48,
+      "json_path": "books/jonah/book.json",
+      "xml_path": "books/jonah/book.xml"
+    },
+    {
+      "name": "Micah",
+      "slug": "micah",
+      "chapter_count": 7,
+      "verse_count": 105,
+      "json_path": "books/micah/book.json",
+      "xml_path": "books/micah/book.xml"
+    },
+    {
+      "name": "Nahum",
+      "slug": "nahum",
+      "chapter_count": 3,
+      "verse_count": 47,
+      "json_path": "books/nahum/book.json",
+      "xml_path": "books/nahum/book.xml"
+    },
+    {
+      "name": "Habakkuk",
+      "slug": "habakkuk",
+      "chapter_count": 3,
+      "verse_count": 56,
+      "json_path": "books/habakkuk/book.json",
+      "xml_path": "books/habakkuk/book.xml"
+    },
+    {
+      "name": "Zephaniah",
+      "slug": "zephaniah",
+      "chapter_count": 3,
+      "verse_count": 53,
+      "json_path": "books/zephaniah/book.json",
+      "xml_path": "books/zephaniah/book.xml"
+    },
+    {
+      "name": "Haggai",
+      "slug": "haggai",
+      "chapter_count": 2,
+      "verse_count": 38,
+      "json_path": "books/haggai/book.json",
+      "xml_path": "books/haggai/book.xml"
+    },
+    {
+      "name": "Zechariah",
+      "slug": "zechariah",
+      "chapter_count": 14,
+      "verse_count": 211,
+      "json_path": "books/zechariah/book.json",
+      "xml_path": "books/zechariah/book.xml"
+    },
+    {
+      "name": "Malachi",
+      "slug": "malachi",
+      "chapter_count": 4,
+      "verse_count": 55,
+      "json_path": "books/malachi/book.json",
+      "xml_path": "books/malachi/book.xml"
+    },
+    {
+      "name": "Matthew",
+      "slug": "matthew",
+      "chapter_count": 28,
+      "verse_count": 1071,
+      "json_path": "books/matthew/book.json",
+      "xml_path": "books/matthew/book.xml"
+    },
+    {
+      "name": "Mark",
+      "slug": "mark",
+      "chapter_count": 16,
+      "verse_count": 678,
+      "json_path": "books/mark/book.json",
+      "xml_path": "books/mark/book.xml"
+    },
+    {
+      "name": "Luke",
+      "slug": "luke",
+      "chapter_count": 24,
+      "verse_count": 1151,
+      "json_path": "books/luke/book.json",
+      "xml_path": "books/luke/book.xml"
+    },
+    {
+      "name": "John",
+      "slug": "john",
+      "chapter_count": 21,
+      "verse_count": 879,
+      "json_path": "books/john/book.json",
+      "xml_path": "books/john/book.xml"
+    },
+    {
+      "name": "Acts",
+      "slug": "acts",
+      "chapter_count": 28,
+      "verse_count": 1007,
+      "json_path": "books/acts/book.json",
+      "xml_path": "books/acts/book.xml"
+    },
+    {
+      "name": "Romans",
+      "slug": "romans",
+      "chapter_count": 16,
+      "verse_count": 433,
+      "json_path": "books/romans/book.json",
+      "xml_path": "books/romans/book.xml"
+    },
+    {
+      "name": "1 Corinthians",
+      "slug": "1-corinthians",
+      "chapter_count": 16,
+      "verse_count": 437,
+      "json_path": "books/1-corinthians/book.json",
+      "xml_path": "books/1-corinthians/book.xml"
+    },
+    {
+      "name": "2 Corinthians",
+      "slug": "2-corinthians",
+      "chapter_count": 13,
+      "verse_count": 257,
+      "json_path": "books/2-corinthians/book.json",
+      "xml_path": "books/2-corinthians/book.xml"
+    },
+    {
+      "name": "Galatians",
+      "slug": "galatians",
+      "chapter_count": 6,
+      "verse_count": 149,
+      "json_path": "books/galatians/book.json",
+      "xml_path": "books/galatians/book.xml"
+    },
+    {
+      "name": "Ephesians",
+      "slug": "ephesians",
+      "chapter_count": 6,
+      "verse_count": 155,
+      "json_path": "books/ephesians/book.json",
+      "xml_path": "books/ephesians/book.xml"
+    },
+    {
+      "name": "Philippians",
+      "slug": "philippians",
+      "chapter_count": 4,
+      "verse_count": 104,
+      "json_path": "books/philippians/book.json",
+      "xml_path": "books/philippians/book.xml"
+    },
+    {
+      "name": "Colossians",
+      "slug": "colossians",
+      "chapter_count": 4,
+      "verse_count": 95,
+      "json_path": "books/colossians/book.json",
+      "xml_path": "books/colossians/book.xml"
+    },
+    {
+      "name": "1 Thessalonians",
+      "slug": "1-thessalonians",
+      "chapter_count": 5,
+      "verse_count": 89,
+      "json_path": "books/1-thessalonians/book.json",
+      "xml_path": "books/1-thessalonians/book.xml"
+    },
+    {
+      "name": "2 Thessalonians",
+      "slug": "2-thessalonians",
+      "chapter_count": 3,
+      "verse_count": 47,
+      "json_path": "books/2-thessalonians/book.json",
+      "xml_path": "books/2-thessalonians/book.xml"
+    },
+    {
+      "name": "1 Timothy",
+      "slug": "1-timothy",
+      "chapter_count": 6,
+      "verse_count": 113,
+      "json_path": "books/1-timothy/book.json",
+      "xml_path": "books/1-timothy/book.xml"
+    },
+    {
+      "name": "2 Timothy",
+      "slug": "2-timothy",
+      "chapter_count": 4,
+      "verse_count": 83,
+      "json_path": "books/2-timothy/book.json",
+      "xml_path": "books/2-timothy/book.xml"
+    },
+    {
+      "name": "Titus",
+      "slug": "titus",
+      "chapter_count": 3,
+      "verse_count": 46,
+      "json_path": "books/titus/book.json",
+      "xml_path": "books/titus/book.xml"
+    },
+    {
+      "name": "Philemon",
+      "slug": "philemon",
+      "chapter_count": 1,
+      "verse_count": 25,
+      "json_path": "books/philemon/book.json",
+      "xml_path": "books/philemon/book.xml"
+    },
+    {
+      "name": "Hebrews",
+      "slug": "hebrews",
+      "chapter_count": 13,
+      "verse_count": 303,
+      "json_path": "books/hebrews/book.json",
+      "xml_path": "books/hebrews/book.xml"
+    },
+    {
+      "name": "James",
+      "slug": "james",
+      "chapter_count": 5,
+      "verse_count": 108,
+      "json_path": "books/james/book.json",
+      "xml_path": "books/james/book.xml"
+    },
+    {
+      "name": "1 Peter",
+      "slug": "1-peter",
+      "chapter_count": 5,
+      "verse_count": 105,
+      "json_path": "books/1-peter/book.json",
+      "xml_path": "books/1-peter/book.xml"
+    },
+    {
+      "name": "2 Peter",
+      "slug": "2-peter",
+      "chapter_count": 3,
+      "verse_count": 61,
+      "json_path": "books/2-peter/book.json",
+      "xml_path": "books/2-peter/book.xml"
+    },
+    {
+      "name": "1 John",
+      "slug": "1-john",
+      "chapter_count": 5,
+      "verse_count": 105,
+      "json_path": "books/1-john/book.json",
+      "xml_path": "books/1-john/book.xml"
+    },
+    {
+      "name": "2 John",
+      "slug": "2-john",
+      "chapter_count": 1,
+      "verse_count": 13,
+      "json_path": "books/2-john/book.json",
+      "xml_path": "books/2-john/book.xml"
+    },
+    {
+      "name": "3 John",
+      "slug": "3-john",
+      "chapter_count": 1,
+      "verse_count": 14,
+      "json_path": "books/3-john/book.json",
+      "xml_path": "books/3-john/book.xml"
+    },
+    {
+      "name": "Jude",
+      "slug": "jude",
+      "chapter_count": 1,
+      "verse_count": 25,
+      "json_path": "books/jude/book.json",
+      "xml_path": "books/jude/book.xml"
+    },
+    {
+      "name": "Revelation",
+      "slug": "revelation",
+      "chapter_count": 22,
+      "verse_count": 404,
+      "json_path": "books/revelation/book.json",
+      "xml_path": "books/revelation/book.xml"
+    }
+  ]
+}
