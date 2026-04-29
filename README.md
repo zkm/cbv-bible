@@ -17,7 +17,3 @@ For a full Catholic canon, you generally expect 73 books, including deuterocanon
 - Baruch
 - 1 Maccabees
 - 2 Maccabees
-
-## Next step
-
-Before publishing as a "Catholic Bible" repository, verify that the source file includes all 73 books.
