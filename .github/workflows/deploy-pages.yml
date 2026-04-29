@@ -24,13 +24,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: yarn
           cache-dependency-path: study-guide/yarn.lock
-          enable-corepack: true
 
       - name: Install dependencies
         working-directory: study-guide
@@ -49,13 +51,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: yarn
           cache-dependency-path: study-guide/yarn.lock
-          enable-corepack: true
 
       - name: Sync generated books into app public folder
         run: |
