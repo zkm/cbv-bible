@@ -24,9 +24,7 @@ jobs:
           node-version: 22
           cache: yarn
           cache-dependency-path: study-guide/yarn.lock
-
-      - name: Enable Corepack
-        run: corepack enable
+          enable-corepack: true
 
       - name: Install dependencies
         working-directory: study-guide
@@ -51,9 +49,7 @@ jobs:
           node-version: 22
           cache: yarn
           cache-dependency-path: study-guide/yarn.lock
-
-      - name: Enable Corepack
-        run: corepack enable
+          enable-corepack: true
 
       - name: Sync generated books into app public folder
         run: |
