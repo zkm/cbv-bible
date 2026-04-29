@@ -1,23 +1,212 @@
 <script setup>
 import { computed, onMounted, ref, watch } from 'vue'
+import {
+  EMPTY_NOTE,
+  MAX_GLOBAL_RESULTS,
+  SEARCH_SCOPE_CHAPTER,
+  SEARCH_SCOPE_GLOBAL,
+  STORAGE_KEY,
+  buildGroupOptions,
+  buildUrlParams,
+  ensureNote as ensureNoteUtil,
+  filterBooksByGroup,
+  filterVersesByQuery,
+  parseUrlParams,
+  sortBooksByCanon,
+} from './utils.js'
 
-const STORAGE_KEY = 'bible-study-notes-v1'
-const SEARCH_SCOPE_CHAPTER = 'chapter'
-const SEARCH_SCOPE_GLOBAL = 'global'
-const MAX_GLOBAL_RESULTS = 200
 const DATA_BASE_URL = `${import.meta.env.BASE_URL}books`
-
-const EMPTY_NOTE = Object.freeze({
-  observation: '',
-  interpretation: '',
-  application: '',
-  prayer: '',
-})
+const CATHOLIC_CANON_ORDER = [
+  'Genesis',
+  'Exodus',
+  'Leviticus',
+  'Numbers',
+  'Deuteronomy',
+  'Joshua',
+  'Judges',
+  'Ruth',
+  '1 Samuel',
+  '2 Samuel',
+  '1 Kings',
+  '2 Kings',
+  '1 Chronicles',
+  '2 Chronicles',
+  'Ezra',
+  'Nehemiah',
+  'Tobit',
+  'Judith',
+  'Esther',
+  'Additions to Esther',
+  '1 Maccabees',
+  '2 Maccabees',
+  'Job',
+  'Psalm',
+  'Proverbs',
+  'Ecclesiastes',
+  'Song of Solomon',
+  'Wisdom of Solomon',
+  'Sirach',
+  'Isaiah',
+  'Jeremiah',
+  'Lamentations',
+  'Baruch',
+  'Ezekiel',
+  'Daniel',
+  'Additions to Daniel',
+  'Hosea',
+  'Joel',
+  'Amos',
+  'Obadiah',
+  'Jonah',
+  'Micah',
+  'Nahum',
+  'Habakkuk',
+  'Zephaniah',
+  'Haggai',
+  'Zechariah',
+  'Malachi',
+  'Matthew',
+  'Mark',
+  'Luke',
+  'John',
+  'Acts',
+  'Romans',
+  '1 Corinthians',
+  '2 Corinthians',
+  'Galatians',
+  'Ephesians',
+  'Philippians',
+  'Colossians',
+  '1 Thessalonians',
+  '2 Thessalonians',
+  '1 Timothy',
+  '2 Timothy',
+  'Titus',
+  'Philemon',
+  'Hebrews',
+  'James',
+  '1 Peter',
+  '2 Peter',
+  '1 John',
+  '2 John',
+  '3 John',
+  'Jude',
+  'Revelation',
+]
+const BOOK_GROUPS = [
+  {
+    id: 'all',
+    label: 'All books',
+    books: null,
+  },
+  {
+    id: 'pentateuch',
+    label: 'Pentateuch',
+    books: ['Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy'],
+  },
+  {
+    id: 'historical',
+    label: 'Historical books',
+    books: [
+      'Joshua',
+      'Judges',
+      'Ruth',
+      '1 Samuel',
+      '2 Samuel',
+      '1 Kings',
+      '2 Kings',
+      '1 Chronicles',
+      '2 Chronicles',
+      'Ezra',
+      'Nehemiah',
+      'Tobit',
+      'Judith',
+      'Esther',
+      'Additions to Esther',
+      '1 Maccabees',
+      '2 Maccabees',
+    ],
+  },
+  {
+    id: 'wisdom',
+    label: 'Wisdom books',
+    books: [
+      'Job',
+      'Psalm',
+      'Proverbs',
+      'Ecclesiastes',
+      'Song of Solomon',
+      'Wisdom of Solomon',
+      'Sirach',
+    ],
+  },
+  {
+    id: 'prophets',
+    label: 'Prophets',
+    books: [
+      'Isaiah',
+      'Jeremiah',
+      'Lamentations',
+      'Baruch',
+      'Ezekiel',
+      'Daniel',
+      'Additions to Daniel',
+      'Hosea',
+      'Joel',
+      'Amos',
+      'Obadiah',
+      'Jonah',
+      'Micah',
+      'Nahum',
+      'Habakkuk',
+      'Zephaniah',
+      'Haggai',
+      'Zechariah',
+      'Malachi',
+    ],
+  },
+  {
+    id: 'gospels-acts',
+    label: 'Gospels & Acts',
+    books: ['Matthew', 'Mark', 'Luke', 'John', 'Acts'],
+  },
+  {
+    id: 'pauline',
+    label: 'Pauline letters',
+    books: [
+      'Romans',
+      '1 Corinthians',
+      '2 Corinthians',
+      'Galatians',
+      'Ephesians',
+      'Philippians',
+      'Colossians',
+      '1 Thessalonians',
+      '2 Thessalonians',
+      '1 Timothy',
+      '2 Timothy',
+      'Titus',
+      'Philemon',
+      'Hebrews',
+    ],
+  },
+  {
+    id: 'catholic-letters',
+    label: 'Catholic letters',
+    books: ['James', '1 Peter', '2 Peter', '1 John', '2 John', '3 John', 'Jude'],
+  },
+  {
+    id: 'revelation',
+    label: 'Revelation',
+    books: ['Revelation'],
+  },
+]
 
 const indexData = ref(null)
 const books = ref([])
 const selectedSlug = ref('')
 const selectedBook = ref(null)
+const selectedGroup = ref('all')
 const selectedChapterNumber = ref(1)
 const searchTerm = ref('')
 const searchScope = ref(SEARCH_SCOPE_CHAPTER)
@@ -64,6 +253,18 @@ const chapterOptions = computed(() => {
   return selectedBook.value?.chapters ?? []
 })
 
+const orderedBooks = computed(() => sortBooksByCanon(books.value, CATHOLIC_CANON_ORDER))
+
+const filteredBooks = computed(() =>
+  filterBooksByGroup(orderedBooks.value, selectedGroup.value, BOOK_GROUPS)
+)
+
+const groupOptions = computed(() => buildGroupOptions(orderedBooks.value, BOOK_GROUPS))
+
+const selectedGroupMeta = computed(() => {
+  return groupOptions.value.find((group) => group.id === selectedGroup.value) ?? groupOptions.value[0]
+})
+
 const currentChapter = computed(() => {
   return (
     chapterOptions.value.find(
@@ -74,15 +275,8 @@ const currentChapter = computed(() => {
 
 const chapterVerses = computed(() => {
   const verses = currentChapter.value?.verses ?? []
-  const query = searchTerm.value.trim().toLowerCase()
-
-  if (searchScope.value !== SEARCH_SCOPE_CHAPTER || !query) return verses
-
-  return verses.filter((verse) => {
-    const text = String(verse.text || '').toLowerCase()
-    const reference = String(verse.reference || '').toLowerCase()
-    return text.includes(query) || reference.includes(query)
-  })
+  if (searchScope.value !== SEARCH_SCOPE_CHAPTER) return verses
+  return filterVersesByQuery(verses, searchTerm.value)
 })
 
 const visibleVerses = computed(() => {
@@ -100,15 +294,7 @@ const activeVerse = computed(() => {
 })
 
 function ensureNote(reference) {
-  if (!notesByReference.value[reference]) {
-    notesByReference.value[reference] = {
-      observation: '',
-      interpretation: '',
-      application: '',
-      prayer: '',
-    }
-  }
-  return notesByReference.value[reference]
+  return ensureNoteUtil(notesByReference.value, reference)
 }
 
 const activeNote = computed(() => {
@@ -189,13 +375,7 @@ async function loadBook(slug) {
 }
 
 function parseUrlState() {
-  const params = new URLSearchParams(window.location.search)
-
-  const slug = params.get('book') || ''
-  const chapter = Number.parseInt(params.get('chapter') || '', 10)
-  const reference = params.get('verse') || ''
-  const query = params.get('q') || ''
-  const scope = params.get('scope')
+  const { slug, chapter, reference, query, scope } = parseUrlParams(window.location.search)
 
   if (query) searchTerm.value = query
   if (scope === SEARCH_SCOPE_GLOBAL || scope === SEARCH_SCOPE_CHAPTER) {
@@ -203,28 +383,19 @@ function parseUrlState() {
   }
 
   if (slug) {
-    initialRouteState.value = {
-      slug,
-      chapter: Number.isFinite(chapter) ? chapter : null,
-      reference,
-    }
+    initialRouteState.value = { slug, chapter, reference }
   }
 }
 
 function syncUrlState() {
-  const params = new URLSearchParams()
+  const query = buildUrlParams({
+    slug: selectedSlug.value,
+    chapter: selectedChapterNumber.value,
+    reference: activeReference.value,
+    searchTerm: searchTerm.value,
+    searchScope: searchScope.value,
+  })
 
-  if (selectedSlug.value) params.set('book', selectedSlug.value)
-  if (selectedChapterNumber.value) {
-    params.set('chapter', String(selectedChapterNumber.value))
-  }
-  if (activeReference.value) params.set('verse', activeReference.value)
-  if (searchTerm.value.trim()) params.set('q', searchTerm.value.trim())
-  if (searchScope.value !== SEARCH_SCOPE_CHAPTER) {
-    params.set('scope', searchScope.value)
-  }
-
-  const query = params.toString()
   const next = query
     ? `${window.location.pathname}?${query}`
     : window.location.pathname
@@ -329,7 +500,9 @@ async function loadIndex() {
     if (books.value.length > 0) {
       const preferredSlug = initialRouteState.value?.slug
       const hasPreferred = books.value.some((b) => b.slug === preferredSlug)
-      selectedSlug.value = hasPreferred ? preferredSlug : books.value[0].slug
+      selectedSlug.value = hasPreferred
+        ? preferredSlug
+        : orderedBooks.value[0]?.slug || books.value[0].slug
     }
   } catch (error) {
     errorMessage.value =
@@ -341,6 +514,14 @@ async function loadIndex() {
 
 watch(selectedSlug, async (slug) => {
   await loadBook(slug)
+})
+
+watch(filteredBooks, (bookList) => {
+  if (bookList.length === 0) return
+  const stillAvailable = bookList.some((book) => book.slug === selectedSlug.value)
+  if (!stillAvailable) {
+    selectedSlug.value = bookList[0].slug
+  }
 })
 
 watch(selectedChapterNumber, () => {
@@ -384,6 +565,8 @@ onMounted(async () => {
 
 <template>
   <div class="page-shell">
+    <a class="skip-link" href="#study-main">Skip to reading and notes</a>
+
     <header class="hero">
       <p class="eyebrow">Scripture Study Guide</p>
       <h1>Read, reflect, and keep notes verse-by-verse</h1>
@@ -393,19 +576,40 @@ onMounted(async () => {
       </p>
     </header>
 
-    <section class="control-panel" v-if="!isLoading">
+    <section class="control-panel" v-if="!isLoading" aria-label="Study controls">
       <label>
         Book
-        <select v-model="selectedSlug" :disabled="isBookLoading">
-          <option v-for="book in books" :key="book.slug" :value="book.slug">
+        <select
+          v-model="selectedSlug"
+          :disabled="isBookLoading"
+          aria-label="Book selector"
+        >
+          <option v-for="book in filteredBooks" :key="book.slug" :value="book.slug">
             {{ book.name }}
           </option>
         </select>
       </label>
 
       <label>
+        Data tools
+        <select
+          v-model="selectedGroup"
+          :disabled="isBookLoading"
+          aria-label="Canonical group filter"
+        >
+          <option v-for="group in groupOptions" :key="group.id" :value="group.id">
+            {{ group.displayLabel }}
+          </option>
+        </select>
+      </label>
+
+      <label>
         Chapter
-        <select v-model.number="selectedChapterNumber" :disabled="isBookLoading">
+        <select
+          v-model.number="selectedChapterNumber"
+          :disabled="isBookLoading"
+          aria-label="Chapter selector"
+        >
           <option
             v-for="chapter in chapterOptions"
             :key="chapter.chapter"
@@ -418,7 +622,11 @@ onMounted(async () => {
 
       <label>
         Search scope
-        <select v-model="searchScope" :disabled="isBookLoading">
+        <select
+          v-model="searchScope"
+          :disabled="isBookLoading"
+          aria-label="Search scope"
+        >
           <option :value="SEARCH_SCOPE_CHAPTER">Current chapter</option>
           <option :value="SEARCH_SCOPE_GLOBAL">All books</option>
         </select>
@@ -431,15 +639,43 @@ onMounted(async () => {
           type="search"
           :disabled="isBookLoading"
           placeholder="Try: covenant, mercy, wisdom, Genesis 1:1"
+          aria-label="Search verses"
         />
       </label>
     </section>
 
-    <section class="status" v-if="isLoading">Loading Bible index...</section>
-    <section class="status error" v-else-if="errorMessage">{{ errorMessage }}</section>
-    <section class="status" v-else-if="isBookLoading">Loading selected book...</section>
+    <section class="context-strip" v-if="!isLoading && !errorMessage" aria-label="Current study context">
+      <p>
+        <span class="context-label">Group</span>
+        <span class="context-value">{{ selectedGroupMeta?.label }}</span>
+      </p>
+      <p>
+        <span class="context-label">Books in group</span>
+        <span class="context-value">{{ selectedGroupMeta?.count }}</span>
+      </p>
+      <p>
+        <span class="context-label">Scope</span>
+        <span class="context-value">
+          {{ searchScope === SEARCH_SCOPE_GLOBAL ? 'All books' : 'Current chapter' }}
+        </span>
+      </p>
+      <p>
+        <span class="context-label">Shown</span>
+        <span class="context-value">{{ visibleVerses.length }} verses</span>
+      </p>
+    </section>
 
-    <main class="study-layout" v-else>
+    <section class="status" v-if="isLoading" role="status" aria-live="polite">
+      Loading Bible index...
+    </section>
+    <section class="status error" v-else-if="errorMessage" role="alert">
+      {{ errorMessage }}
+    </section>
+    <section class="status" v-else-if="isBookLoading" role="status" aria-live="polite">
+      Loading selected book...
+    </section>
+
+    <main id="study-main" class="study-layout" v-else>
       <article class="reading-pane">
         <div class="reading-header">
           <h2>

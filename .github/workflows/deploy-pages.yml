@@ -16,7 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  test:
+    name: Unit tests
     runs-on: ubuntu-latest
 
     steps:
@@ -27,8 +28,38 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: study-guide/package-lock.json
+          cache: yarn
+          cache-dependency-path: study-guide/yarn.lock
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        working-directory: study-guide
+        run: yarn install --immutable
+
+      - name: Run tests
+        working-directory: study-guide
+        run: yarn test
+
+  build:
+    name: Build app
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: study-guide/yarn.lock
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Sync generated books into app public folder
         run: |
@@ -37,11 +68,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: study-guide
-        run: npm ci
+        run: yarn install --immutable
 
       - name: Build app
         working-directory: study-guide
-        run: npm run build
+        run: yarn build
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -52,6 +83,7 @@ jobs:
           path: study-guide/dist
 
   deploy:
+    name: Deploy to Pages
     needs: build
     runs-on: ubuntu-latest
 

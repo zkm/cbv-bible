@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: study-guide/yarn.lock
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        working-directory: study-guide
+        run: yarn install --immutable
+
+      - name: Run tests
+        working-directory: study-guide
+        run: yarn test
+
+  build:
+    name: Build check
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: study-guide/yarn.lock
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Sync generated books into app public folder
+        run: |
+          rm -rf study-guide/public/books
+          cp -r books study-guide/public/books
+
+      - name: Install dependencies
+        working-directory: study-guide
+        run: yarn install --immutable
+
+      - name: Build app
+        working-directory: study-guide
+        run: yarn build

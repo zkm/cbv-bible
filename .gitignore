@@ -6,9 +6,11 @@ __pycache__/
 # Node / Vue app
 study-guide/node_modules/
 study-guide/dist/
+study-guide/coverage/
 
 # Generated build artifacts
 *.log
+.tmp/
 
 # OS / editor
 .DS_Store

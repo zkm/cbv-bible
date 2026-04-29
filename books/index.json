@@ -1,7 +1,7 @@
 {
   "abbreviation": "CPDV",
   "translation": "Catholic Public Domain Version",
-  "book_count": 66,
+  "book_count": 75,
   "books": [
     {
       "name": "Genesis",
@@ -530,6 +530,78 @@
       "verse_count": 404,
       "json_path": "books/revelation/book.json",
       "xml_path": "books/revelation/book.xml"
+    },
+    {
+      "name": "Tobit",
+      "slug": "tobit",
+      "chapter_count": 14,
+      "verse_count": 298,
+      "json_path": "books/tobit/book.json",
+      "xml_path": "books/tobit/book.xml"
+    },
+    {
+      "name": "Judith",
+      "slug": "judith",
+      "chapter_count": 16,
+      "verse_count": 345,
+      "json_path": "books/judith/book.json",
+      "xml_path": "books/judith/book.xml"
+    },
+    {
+      "name": "Additions to Esther",
+      "slug": "additions-to-esther",
+      "chapter_count": 6,
+      "verse_count": 250,
+      "json_path": "books/additions-to-esther/book.json",
+      "xml_path": "books/additions-to-esther/book.xml"
+    },
+    {
+      "name": "Wisdom of Solomon",
+      "slug": "wisdom-of-solomon",
+      "chapter_count": 19,
+      "verse_count": 439,
+      "json_path": "books/wisdom-of-solomon/book.json",
+      "xml_path": "books/wisdom-of-solomon/book.xml"
+    },
+    {
+      "name": "Sirach",
+      "slug": "sirach",
+      "chapter_count": 66,
+      "verse_count": 2048,
+      "json_path": "books/sirach/book.json",
+      "xml_path": "books/sirach/book.xml"
+    },
+    {
+      "name": "Baruch",
+      "slug": "baruch",
+      "chapter_count": 48,
+      "verse_count": 1387,
+      "json_path": "books/baruch/book.json",
+      "xml_path": "books/baruch/book.xml"
+    },
+    {
+      "name": "Additions to Daniel",
+      "slug": "additions-to-daniel",
+      "chapter_count": 2,
+      "verse_count": 107,
+      "json_path": "books/additions-to-daniel/book.json",
+      "xml_path": "books/additions-to-daniel/book.xml"
+    },
+    {
+      "name": "1 Maccabees",
+      "slug": "1-maccabees",
+      "chapter_count": 16,
+      "verse_count": 925,
+      "json_path": "books/1-maccabees/book.json",
+      "xml_path": "books/1-maccabees/book.xml"
+    },
+    {
+      "name": "2 Maccabees",
+      "slug": "2-maccabees",
+      "chapter_count": 28,
+      "verse_count": 1540,
+      "json_path": "books/2-maccabees/book.json",
+      "xml_path": "books/2-maccabees/book.xml"
     }
   ]
 }

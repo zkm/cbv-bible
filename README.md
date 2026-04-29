@@ -27,19 +27,61 @@ This repository contains CPDV Bible text data in multiple formats plus a Vue app
 	- Prayer
 - Notes auto-saved in browser localStorage
 
+## App source layout
+
+```
+study-guide/src/
+  App.vue          # main SPA component
+  utils.js         # pure utility functions (sorting, filtering, URL, notes)
+  style.css        # design system / global CSS
+  main.js          # Vue entry point
+  __tests__/
+    utils.test.js  # Vitest unit tests for utils.js
+```
+
 ## Run the app
 
 ```bash
 cd study-guide
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
+
+## Run the tests
+
+```bash
+cd study-guide
+yarn test          # single run
+yarn test:watch    # watch mode
+```
+
+## Rebuild the dataset
+
+Use the reproducible rebuild script:
+
+```bash
+python scripts/rebuild_dataset.py
+```
+
+To re-import deuterocanonical entries from public-domain Gutenberg DRB and then rebuild everything:
+
+```bash
+python scripts/rebuild_dataset.py --import-deuterocanon
+```
+
+This script updates:
+
+- `bible.txt`
+- `bible.json`
+- `bible.xml`
+- `books/`
+- `study-guide/public/books/`
 
 Build for production:
 
 ```bash
 cd study-guide
-npm run build
+yarn build
 ```
 
 ## Publish on GitHub Pages
@@ -48,9 +90,12 @@ This repo includes an automated Pages workflow at `.github/workflows/deploy-page
 
 What it does on each push to `main`:
 
+- Runs the unit test suite (fails fast on any error)
 - Copies `books/` into `study-guide/public/books`
 - Builds the Vue app
 - Deploys `study-guide/dist` to GitHub Pages
+
+Pull requests and topic branches are covered by `.github/workflows/ci.yml`, which runs the tests without deploying.
 
 One-time GitHub setup:
 
@@ -61,7 +106,16 @@ One-time GitHub setup:
 
 ## Notes about canon coverage
 
-Current dataset contains 66 books based on available source text in `bible.txt`.
+Current dataset contains 75 entries:
+
+- 66 standard books from the original source text
+- 7 deuterocanonical stand-alone books
+- 2 additions entries (Esther and Daniel)
+
+The deuterocanonical content in this repository was imported from the
+public-domain Douay-Rheims Gutenberg text to satisfy Catholic canon coverage.
+
+The study guide book selector uses Catholic canonical ordering.
 
 ## License
 

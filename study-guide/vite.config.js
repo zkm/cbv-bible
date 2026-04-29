@@ -14,4 +14,8 @@ const base = isGitHubActions
 export default defineConfig({
   plugins: [vue()],
   base,
+  test: {
+    environment: 'jsdom',
+    include: ['src/**/*.{test,spec}.{js,ts}'],
+  },
 })
