@@ -470,8 +470,10 @@ function jumpToVerse(verse) {
   searchScope.value = SEARCH_SCOPE_CHAPTER
 
   if (selectedSlug.value === verse.slug) {
-    skipNextChapterReset.value = true
-    selectedChapterNumber.value = verse.chapter
+    if (verse.chapter !== selectedChapterNumber.value) {
+      skipNextChapterReset.value = true
+      selectedChapterNumber.value = verse.chapter
+    }
     activeReference.value = verse.reference
     return
   }

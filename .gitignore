@@ -8,6 +8,9 @@ study-guide/node_modules/
 study-guide/dist/
 study-guide/coverage/
 
+# Generated dataset mirror (synced from books/ via scripts/rebuild_dataset.py or CI)
+study-guide/public/books/
+
 # Generated build artifacts
 *.log
 .tmp/

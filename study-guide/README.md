@@ -25,6 +25,12 @@ src/
 
 ## Development
 
+`public/books` is generated and not committed to git. Sync it once from the repo root before your first `yarn dev` (and again whenever `../bible.txt` changes):
+
+```bash
+python ../scripts/rebuild_dataset.py
+```
+
 ```bash
 yarn install
 yarn dev

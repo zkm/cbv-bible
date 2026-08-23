@@ -41,7 +41,10 @@ study-guide/src/
 
 ## Run the app
 
+`study-guide/public/books` is generated and not committed to git, so sync it once before your first `yarn dev` (and again whenever `bible.txt` changes):
+
 ```bash
+python scripts/rebuild_dataset.py
 cd study-guide
 yarn install
 yarn dev
