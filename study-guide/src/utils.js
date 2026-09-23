@@ -46,8 +46,33 @@ export function filterBooksByGroup(orderedBooks, groupId, bookGroups) {
   return orderedBooks.filter((book) => allowed.has(book.name))
 }
 
+const REFERENCE_QUERY_RE = /^(.+?)\s+(\d+)(?::(\d+))?$/
+
 /**
- * Filter a list of verse objects to those whose text or reference contains the
+ * Decide whether a verse matches an already-trimmed, lower-cased query.
+ *
+ * Text is matched by substring. References are matched structurally so that
+ * "John 1:1" does not also hit "1 John 1:1" or "John 1:10": a reference-shaped
+ * query ("John 1" or "John 1:1") matches that chapter or verse exactly, and any
+ * other query matches references by prefix ("gen" matches Genesis verses).
+ *
+ * @param {{text: string, reference: string}} verse
+ * @param {string} q  Trimmed, lower-cased query (non-empty)
+ * @returns {boolean}
+ */
+export function verseMatchesQuery(verse, q) {
+  const text = String(verse.text || '').toLowerCase()
+  if (text.includes(q)) return true
+
+  const reference = String(verse.reference || '').toLowerCase()
+  if (REFERENCE_QUERY_RE.test(q)) {
+    return reference === q || reference.startsWith(`${q}:`)
+  }
+  return reference.startsWith(q)
+}
+
+/**
+ * Filter a list of verse objects to those whose text or reference matches the
  * given query string (case-insensitive). Returns the full list when the query
  * is empty.
  *
@@ -58,11 +83,7 @@ export function filterBooksByGroup(orderedBooks, groupId, bookGroups) {
 export function filterVersesByQuery(verses, query) {
   const q = query.trim().toLowerCase()
   if (!q) return verses
-  return verses.filter((verse) => {
-    const text = String(verse.text || '').toLowerCase()
-    const reference = String(verse.reference || '').toLowerCase()
-    return text.includes(q) || reference.includes(q)
-  })
+  return verses.filter((verse) => verseMatchesQuery(verse, q))
 }
 
 /**

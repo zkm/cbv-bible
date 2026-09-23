@@ -117,6 +117,30 @@ describe('filterVersesByQuery', () => {
   it('returns empty array when nothing matches', () => {
     expect(filterVersesByQuery(verses, 'zzznomatch')).toHaveLength(0)
   })
+
+  describe('reference queries', () => {
+    const refs = [
+      { reference: 'John 1:1', text: 'In the beginning was the Word.' },
+      { reference: 'John 1:10', text: 'He was in the world.' },
+      { reference: 'John 2:1', text: 'On the third day.' },
+      { reference: '1 John 1:1', text: 'That which was from the beginning.' },
+      { reference: '2 John 1:1', text: 'The elder to the elect lady.' },
+    ]
+    const refsOf = (q) => filterVersesByQuery(refs, q).map((v) => v.reference)
+
+    it('matches a verse reference exactly', () => {
+      expect(refsOf('John 1:1')).toEqual(['John 1:1'])
+    })
+
+    it('matches every verse of a chapter reference', () => {
+      expect(refsOf('john 1')).toEqual(['John 1:1', 'John 1:10'])
+    })
+
+    it('matches a book name by prefix without pulling in numbered books', () => {
+      expect(refsOf('john')).toEqual(['John 1:1', 'John 1:10', 'John 2:1'])
+      expect(refsOf('1 john')).toEqual(['1 John 1:1'])
+    })
+  })
 })
 
 // ---------------------------------------------------------------------------

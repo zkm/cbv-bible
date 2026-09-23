@@ -13,6 +13,7 @@ import {
   filterVersesByQuery,
   parseUrlParams,
   sortBooksByCanon,
+  verseMatchesQuery,
 } from './utils.js'
 
 const DATA_BASE_URL = `${import.meta.env.BASE_URL}books`
@@ -218,11 +219,16 @@ const errorMessage = ref('')
 
 const notesByReference = ref({})
 const globalResults = ref([])
+const globalMatchCount = ref(0)
+const globalSearchError = ref('')
 
 const bookCache = new Map()
 const globalCorpus = ref([])
 const initialRouteState = ref(null)
-const skipNextChapterReset = ref(false)
+
+let bookLoadToken = 0
+let globalSearchToken = 0
+let corpusPromise = null
 
 function loadNotesFromStorage() {
   try {
@@ -238,7 +244,11 @@ function loadNotesFromStorage() {
 }
 
 function saveNotesToStorage() {
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(notesByReference.value))
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(notesByReference.value))
+  } catch {
+    // Storage can be blocked or full; notes stay in memory for this session.
+  }
 }
 
 watch(
@@ -310,51 +320,49 @@ function updateNote(field, value) {
   note[field] = value
 }
 
+async function fetchBook(slug) {
+  let book = bookCache.get(slug)
+  if (book) return book
+
+  const response = await fetch(`${DATA_BASE_URL}/${slug}/book.json`)
+  if (!response.ok) {
+    throw new Error(`Unable to load book: ${response.status}`)
+  }
+
+  book = await response.json()
+  bookCache.set(slug, book)
+  return book
+}
+
 async function loadBook(slug) {
   if (!slug) return
+
+  const token = ++bookLoadToken
 
   try {
     isBookLoading.value = true
     errorMessage.value = ''
 
-    let book = bookCache.get(slug)
-    if (!book) {
-      const response = await fetch(`${DATA_BASE_URL}/${slug}/book.json`)
-
-      if (!response.ok) {
-        throw new Error(`Unable to load book: ${response.status}`)
-      }
-
-      book = await response.json()
-      bookCache.set(slug, book)
-    }
+    const book = await fetchBook(slug)
+    if (token !== bookLoadToken) return
 
     selectedBook.value = book
 
     const availableChapters = new Set((book.chapters ?? []).map((c) => c.chapter))
-    if (!availableChapters.has(selectedChapterNumber.value)) {
-      selectedChapterNumber.value = book.chapters?.[0]?.chapter ?? 1
-    }
+    const routeState =
+      initialRouteState.value?.slug === slug ? initialRouteState.value : null
 
-    if (
-      initialRouteState.value &&
-      initialRouteState.value.slug === slug &&
-      Number.isFinite(initialRouteState.value.chapter)
-    ) {
-      const routeChapter = initialRouteState.value.chapter
-      if (availableChapters.has(routeChapter)) {
-        selectedChapterNumber.value = routeChapter
-      }
+    if (routeState && availableChapters.has(routeState.chapter)) {
+      selectedChapterNumber.value = routeState.chapter
+    } else {
+      selectedChapterNumber.value = book.chapters?.[0]?.chapter ?? 1
     }
 
     const chapterVersesInBook =
       (book.chapters ?? []).find((c) => c.chapter === selectedChapterNumber.value)
         ?.verses ?? []
 
-    const routeRef =
-      initialRouteState.value && initialRouteState.value.slug === slug
-        ? initialRouteState.value.reference
-        : ''
+    const routeRef = routeState?.reference ?? ''
 
     if (routeRef && chapterVersesInBook.some((v) => v.reference === routeRef)) {
       activeReference.value = routeRef
@@ -362,15 +370,18 @@ async function loadBook(slug) {
       activeReference.value = ''
     }
 
-    if (initialRouteState.value?.slug === slug) {
+    if (routeState) {
       initialRouteState.value = null
     }
   } catch (error) {
+    if (token !== bookLoadToken) return
     selectedBook.value = null
     errorMessage.value =
       error instanceof Error ? error.message : 'Unable to load selected book.'
   } finally {
-    isBookLoading.value = false
+    if (token === bookLoadToken) {
+      isBookLoading.value = false
+    }
   }
 }
 
@@ -402,23 +413,20 @@ function syncUrlState() {
   window.history.replaceState({}, '', next)
 }
 
-async function ensureGlobalCorpus() {
-  if (globalCorpus.value.length > 0) return
+function ensureGlobalCorpus() {
+  if (globalCorpus.value.length > 0) return Promise.resolve()
+  if (corpusPromise) return corpusPromise
 
-  const corpus = []
+  corpusPromise = (async () => {
+    // Load every book, then flatten in canon order so results are stable
+    // regardless of which fetch finishes first.
+    const loadedBooks = await Promise.all(
+      orderedBooks.value.map((bookMeta) => fetchBook(bookMeta.slug))
+    )
 
-  await Promise.all(
-    books.value.map(async (bookMeta) => {
-      let loaded = bookCache.get(bookMeta.slug)
-      if (!loaded) {
-        const response = await fetch(`${DATA_BASE_URL}/${bookMeta.slug}/book.json`)
-        if (!response.ok) return
-        loaded = await response.json()
-        bookCache.set(bookMeta.slug, loaded)
-      }
-
-      if (!loaded) return
-
+    const corpus = []
+    orderedBooks.value.forEach((bookMeta, index) => {
+      const loaded = loadedBooks[index]
       for (const chapter of loaded.chapters ?? []) {
         for (const verse of chapter.verses ?? []) {
           corpus.push({
@@ -432,20 +440,24 @@ async function ensureGlobalCorpus() {
         }
       }
     })
-  )
 
-  globalCorpus.value = corpus
+    globalCorpus.value = corpus
+  })().finally(() => {
+    corpusPromise = null
+  })
+
+  return corpusPromise
 }
 
 async function runGlobalSearch() {
-  if (searchScope.value !== SEARCH_SCOPE_GLOBAL) {
-    globalResults.value = []
-    return
-  }
+  const token = ++globalSearchToken
+  globalSearchError.value = ''
 
   const query = searchTerm.value.trim().toLowerCase()
-  if (!query) {
+  if (searchScope.value !== SEARCH_SCOPE_GLOBAL || !query) {
     globalResults.value = []
+    globalMatchCount.value = 0
+    isGlobalSearching.value = false
     return
   }
 
@@ -453,27 +465,34 @@ async function runGlobalSearch() {
 
   try {
     await ensureGlobalCorpus()
+    if (token !== globalSearchToken) return
 
-    globalResults.value = globalCorpus.value
-      .filter((entry) => {
-        const text = String(entry.text || '').toLowerCase()
-        const reference = String(entry.reference || '').toLowerCase()
-        return text.includes(query) || reference.includes(query)
-      })
-      .slice(0, MAX_GLOBAL_RESULTS)
+    const matches = globalCorpus.value.filter((entry) => verseMatchesQuery(entry, query))
+    globalMatchCount.value = matches.length
+    globalResults.value = matches.slice(0, MAX_GLOBAL_RESULTS)
+  } catch (error) {
+    if (token !== globalSearchToken) return
+    globalResults.value = []
+    globalMatchCount.value = 0
+    globalSearchError.value =
+      error instanceof Error ? error.message : 'Unable to search all books.'
   } finally {
-    isGlobalSearching.value = false
+    if (token === globalSearchToken) {
+      isGlobalSearching.value = false
+    }
   }
 }
 
 function jumpToVerse(verse) {
   searchScope.value = SEARCH_SCOPE_CHAPTER
 
+  // The book select only lists books in the active group; widen it if needed.
+  if (!filteredBooks.value.some((book) => book.slug === verse.slug)) {
+    selectedGroup.value = 'all'
+  }
+
   if (selectedSlug.value === verse.slug) {
-    if (verse.chapter !== selectedChapterNumber.value) {
-      skipNextChapterReset.value = true
-      selectedChapterNumber.value = verse.chapter
-    }
+    selectedChapterNumber.value = verse.chapter
     activeReference.value = verse.reference
     return
   }
@@ -527,18 +546,15 @@ watch(filteredBooks, (bookList) => {
 })
 
 watch(selectedChapterNumber, () => {
-  if (skipNextChapterReset.value) {
-    skipNextChapterReset.value = false
-    return
+  // Keep a selection that was set together with the chapter (deep links,
+  // search jumps); clear one left over from a different chapter.
+  const verses = currentChapter.value?.verses ?? []
+  if (!verses.some((verse) => verse.reference === activeReference.value)) {
+    activeReference.value = ''
   }
-  activeReference.value = ''
 })
 
-watch(searchScope, async (scope) => {
-  if (scope === SEARCH_SCOPE_CHAPTER) {
-    globalResults.value = []
-    return
-  }
+watch(searchScope, async () => {
   await runGlobalSearch()
 })
 
@@ -692,8 +708,24 @@ onMounted(async () => {
             <span v-if="searchScope === SEARCH_SCOPE_GLOBAL && isGlobalSearching">
               (searching...)
             </span>
+            <span
+              v-else-if="
+                searchScope === SEARCH_SCOPE_GLOBAL &&
+                globalMatchCount > visibleVerses.length
+              "
+            >
+              (first {{ visibleVerses.length }} of {{ globalMatchCount }} matches; refine your search)
+            </span>
           </p>
         </div>
+
+        <p
+          v-if="searchScope === SEARCH_SCOPE_GLOBAL && globalSearchError"
+          class="status error"
+          role="alert"
+        >
+          {{ globalSearchError }}
+        </p>
 
         <div class="verse-list" v-if="visibleVerses.length">
           <button
@@ -722,7 +754,7 @@ onMounted(async () => {
           </button>
         </div>
 
-        <p v-else class="empty-state">
+        <p v-else-if="!globalSearchError" class="empty-state">
           {{
             searchScope === SEARCH_SCOPE_GLOBAL
               ? 'No global matches found for this search.'
