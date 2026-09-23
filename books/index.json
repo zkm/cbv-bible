@@ -551,7 +551,7 @@
       "name": "Additions to Esther",
       "slug": "additions-to-esther",
       "chapter_count": 6,
-      "verse_count": 250,
+      "verse_count": 98,
       "json_path": "books/additions-to-esther/book.json",
       "xml_path": "books/additions-to-esther/book.xml"
     },
@@ -566,16 +566,16 @@
     {
       "name": "Sirach",
       "slug": "sirach",
-      "chapter_count": 66,
-      "verse_count": 2048,
+      "chapter_count": 51,
+      "verse_count": 1591,
       "json_path": "books/sirach/book.json",
       "xml_path": "books/sirach/book.xml"
     },
     {
       "name": "Baruch",
       "slug": "baruch",
-      "chapter_count": 48,
-      "verse_count": 1387,
+      "chapter_count": 6,
+      "verse_count": 213,
       "json_path": "books/baruch/book.json",
       "xml_path": "books/baruch/book.xml"
     },
@@ -598,8 +598,8 @@
     {
       "name": "2 Maccabees",
       "slug": "2-maccabees",
-      "chapter_count": 28,
-      "verse_count": 1540,
+      "chapter_count": 15,
+      "verse_count": 558,
       "json_path": "books/2-maccabees/book.json",
       "xml_path": "books/2-maccabees/book.xml"
     }

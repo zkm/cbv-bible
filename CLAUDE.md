@@ -34,7 +34,7 @@ python scripts/rebuild_dataset.py                     # regenerate bible.json/xm
 python scripts/rebuild_dataset.py --import-deuterocanon  # also re-fetch/re-merge deuterocanonical books from Gutenberg DRB into bible.txt first
 ```
 
-`--import-deuterocanon` downloads from Project Gutenberg (network access required) and caches to `.tmp/drb-8300.txt`.
+`--import-deuterocanon` downloads from Project Gutenberg (network access required the first time) and caches to `.tmp/drb-8300.txt`; later runs reuse the cache unless `--refresh-source` is passed.
 
 ## Architecture
 

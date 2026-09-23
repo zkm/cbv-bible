@@ -43,8 +43,10 @@ SOURCE_BOOK_MAP = {
     "2 Machabees": "2 Maccabees",
 }
 
+# Matches the header of any book in the source (e.g. "Job Chapter 1"), not just
+# the ones we import, so that parsing stops at the end of the last imported chapter.
 CHAPTER_HEADER_RE = re.compile(
-    r"^(Tobias|Judith|Esther|Wisdom|Ecclesiasticus|Baruch|Daniel|1 Machabees|2 Machabees) Chapter\s+(\d+)\.?$"
+    r"^((?:[123] )?[A-Z][a-z]+(?: (?:of )?[A-Z][a-z]+){0,2}) Chapter\s+(\d+)\.?$"
 )
 SOURCE_VERSE_RE = re.compile(r"^(\d+):(\d+)\.\s*(.*)$")
 PROJECT_VERSE_RE = re.compile(r"^(?P<book>.+?)\s+(?P<chapter>\d+):(?P<verse>\d+)\t(?P<text>.+)$")
@@ -97,10 +99,13 @@ def write_bible_text(path: Path, abbreviation: str, translation: str, verses: li
     path.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
 
 
-def fetch_drb_text(cache_path: Path) -> str:
+def fetch_drb_text(cache_path: Path, refresh: bool = False) -> str:
+    if cache_path.exists() and not refresh:
+        return cache_path.read_text(encoding="utf-8")
+
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     with urllib.request.urlopen(GUTENBERG_DRB_URL, timeout=60) as response:
-        text = response.read().decode("utf-8", errors="ignore")
+        text = response.read().decode("utf-8")
     cache_path.write_text(text, encoding="utf-8")
     return text
 
@@ -114,6 +119,9 @@ def parse_deuterocanonical_entries(drb_text: str) -> list[dict[str, object]]:
     for raw_line in drb_text.splitlines():
         line = raw_line.strip()
         if not line:
+            # Verses are single paragraphs; anything after a blank line that is
+            # not a new verse or chapter header is Challoner commentary.
+            last_record = None
             continue
 
         chapter_match = CHAPTER_HEADER_RE.match(line)
@@ -131,6 +139,10 @@ def parse_deuterocanonical_entries(drb_text: str) -> list[dict[str, object]]:
             chapter_num = int(verse_match.group(1))
             verse_num = int(verse_match.group(2))
             text = verse_match.group(3).strip()
+
+            if chapter_num != current_chapter:
+                last_record = None
+                continue
 
             out_book: str | None = None
             out_chapter: int | None = None
@@ -369,6 +381,11 @@ def main() -> int:
         default=".tmp/drb-8300.txt",
         help="Path to cache downloaded DRB text.",
     )
+    parser.add_argument(
+        "--refresh-source",
+        action="store_true",
+        help="Re-download the DRB text even if a cached copy exists.",
+    )
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent
@@ -382,7 +399,7 @@ def main() -> int:
 
     if args.import_deuterocanon:
         cache_path = repo_root / args.source_cache
-        drb_text = fetch_drb_text(cache_path)
+        drb_text = fetch_drb_text(cache_path, refresh=args.refresh_source)
         extras = parse_deuterocanonical_entries(drb_text)
         if not extras:
             print("Error: no deuterocanonical entries parsed from source.", file=sys.stderr)
