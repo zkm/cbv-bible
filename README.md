@@ -1,5 +1,17 @@
 # Bible Data + Vue Study Guide
 
+[![Deploy](https://github.com/zkm/cbv-bible/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/zkm/cbv-bible/actions/workflows/deploy-pages.yml)
+[![study guide](https://img.shields.io/website?url=https%3A%2F%2Fzkm.github.io%2Fcbv-bible%2F&label=study%20guide)](https://zkm.github.io/cbv-bible/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+![Data: TXT, JSON, XML](https://img.shields.io/badge/data-TXT%20%C2%B7%20JSON%20%C2%B7%20XML-6E6E6E)
+![Vue 3](https://img.shields.io/badge/Vue-3-4FC08D?logo=vuedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
+![Yarn 4](https://img.shields.io/badge/Yarn-4-2C8EBB?logo=yarn&logoColor=white)
+![Node.js 22](https://img.shields.io/badge/Node.js-22-5FA04E?logo=nodedotjs&logoColor=white)
+![Python data scripts](https://img.shields.io/badge/Python-data%20scripts-3776AB?logo=python&logoColor=white)
+
 This repository contains CPDV Bible text data in multiple formats plus a Vue app for scripture study.
 
 ## Repository contents
